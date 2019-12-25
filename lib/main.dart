@@ -33,21 +33,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-
-  void _setTimeOut(int _ms){
-    Future.delayed(Duration(milliseconds: _ms), (){
-      //. action
-      print("action for setTimeout");
-    });
-  }
-
-  void _setInterval(int _ms){
-    Timer.periodic(Duration(milliseconds: _ms), (timer) {
-      //. action
-      print("action for _setInterval");
-    });
-  }
-
   Widget _getMenu(){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
