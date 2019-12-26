@@ -1,3 +1,4 @@
+import 'package:eduprog_flutter_exercises/eduprog/custom_font.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -75,6 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ResponsivePage(title: "Eduprog Responsive UI",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Custom Font", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh style font yang custom"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CustomFontPage(title: "Eduprog Custom Font",)),
                   );
                 },
               )
