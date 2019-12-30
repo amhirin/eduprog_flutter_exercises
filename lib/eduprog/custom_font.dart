@@ -16,7 +16,7 @@ class _CustomFontPageState extends State<CustomFontPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(child: Text("My Custom Font", style: TextStyle(fontFamily: "Schaeffer", fontSize: 40),),) // This trailing comma makes auto-formatting nicer for build methods.
+      body: Center(child: Text("My Custom Font", style: TextStyle(fontFamily: "Schaeffer", fontSize: 40),),)
     );
   }
 }

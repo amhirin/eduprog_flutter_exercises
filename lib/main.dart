@@ -1,4 +1,5 @@
 import 'package:eduprog_flutter_exercises/eduprog/custom_font.dart';
+import 'package:eduprog_flutter_exercises/eduprog/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -70,12 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Divider(),
               ListTile(
-                title: Text("Responsive UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh tampilan responsive"),
+                title: Text("Login UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh tampilan UI Login"),
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ResponsivePage(title: "Eduprog Responsive UI",)),
+                    MaterialPageRoute(builder: (context) => LoginPage(title: "Eduprog Login UI",)),
                   );
                 },
               ),
