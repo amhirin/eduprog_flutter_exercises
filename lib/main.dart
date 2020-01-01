@@ -1,4 +1,5 @@
 import 'package:eduprog_flutter_exercises/eduprog/custom_font.dart';
+import 'package:eduprog_flutter_exercises/eduprog/freeze_table.dart';
 import 'package:eduprog_flutter_exercises/eduprog/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -88,6 +89,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => CustomFontPage(title: "Eduprog Custom Font",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Freeze Table (Column)", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh desaign table dengan freeze column"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FreezeColumnPage(title: "Eduprog Freeze Column",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Freeze Table (Row)", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh desaign table dengan freeze row"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FreezeRowPage(title: "Eduprog Freeze Row",)),
                   );
                 },
               )
