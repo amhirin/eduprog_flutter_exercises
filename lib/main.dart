@@ -72,6 +72,17 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Divider(),
               ListTile(
+                title: Text("Responsive UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh tampilan widget Responsive"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage(title: "Eduprog Responsive UI",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
                 title: Text("Login UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
                 subtitle: Text("Contoh tampilan UI Login"),
                 onTap: (){
