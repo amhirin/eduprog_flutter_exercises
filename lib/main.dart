@@ -1,6 +1,9 @@
+import 'package:eduprog_flutter_exercises/eduprog/chipselections.dart';
 import 'package:eduprog_flutter_exercises/eduprog/custom_font.dart';
 import 'package:eduprog_flutter_exercises/eduprog/freeze_table.dart';
 import 'package:eduprog_flutter_exercises/eduprog/login.dart';
+import 'package:eduprog_flutter_exercises/eduprog/nav_drawer.dart';
+import 'package:eduprog_flutter_exercises/eduprog/willpopscope.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Eduprog Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        //primarySwatch: Colors.purple,
       ),
       home: MyHomePage(title: 'Eduprog Flutter Demo'),
     );
@@ -106,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Divider(),
               ListTile(
                 title: Text("Freeze Table (Column)", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh desaign table dengan freeze column"),
+                subtitle: Text("Contoh desain tabel dengan freeze column"),
                 onTap: (){
                   Navigator.push(
                     context,
@@ -117,11 +120,44 @@ class _MyHomePageState extends State<MyHomePage> {
               Divider(),
               ListTile(
                 title: Text("Freeze Table (Row)", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh desaign table dengan freeze row"),
+                subtitle: Text("Contoh desain tabel dengan freeze row"),
                 onTap: (){
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => FreezeRowPage(title: "Eduprog Freeze Row",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Navigation Drawer", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh implementasi drawer pada halaman"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NavDrawerPage(title: "Eduprog Drawer",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Exit Confirmation", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh konfirmasi button back dengan WillPopScope"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WllPopScopePage(title: "Eduprog WillPopScope",)),
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text("Chip Selection", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                subtitle: Text("Contoh Chip Selection untuk Single / Multiple Choice"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChipSelectionPage(title: "Eduprog Chip Selection",)),
                   );
                 },
               )
