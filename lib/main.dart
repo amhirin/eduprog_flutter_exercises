@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage(title: "Eduprog Responsive UI",)),
+                    MaterialPageRoute(builder: (context) => ResponsivePage(title: "Eduprog Responsive UI",)),
                   );
                 },
               ),
