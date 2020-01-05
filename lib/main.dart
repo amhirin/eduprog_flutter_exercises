@@ -3,6 +3,8 @@ import 'package:eduprog_flutter_exercises/eduprog/custom_font.dart';
 import 'package:eduprog_flutter_exercises/eduprog/freeze_table.dart';
 import 'package:eduprog_flutter_exercises/eduprog/login.dart';
 import 'package:eduprog_flutter_exercises/eduprog/nav_drawer.dart';
+import 'package:eduprog_flutter_exercises/eduprog/page8.dart';
+import 'package:eduprog_flutter_exercises/eduprog/qrcodes.dart';
 import 'package:eduprog_flutter_exercises/eduprog/willpopscope.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -62,105 +64,150 @@ class _MyHomePageState extends State<MyHomePage> {
         Expanded(
           child: ListView(
             children: <Widget>[
-              ListTile(
-                title: Text("Fungsi setInterval dan setTimeout", style: TextStyle(fontWeight: FontWeight.bold),) ,
-                subtitle: Text("Contoh Fungsi setTimeout (sleep) dan setInterval (timer)"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SleepTimerPage(title: "Eduprog Sleep dan Timer",)),
-                  );
+              ExpansionTile(
+                title: Text("Section 1"),
+                children: <Widget>[
+                  ListTile(
+                    title: Text("Fungsi setInterval dan setTimeout", style: TextStyle(fontWeight: FontWeight.bold),) ,
+                    subtitle: Text("Contoh Fungsi setTimeout (sleep) dan setInterval (timer)"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SleepTimerPage(title: "Eduprog Sleep dan Timer",)),
+                      );
 
-                },
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Responsive UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh tampilan widget Responsive"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ResponsivePage(title: "Eduprog Responsive UI",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Login UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh tampilan UI Login"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage(title: "Eduprog Login UI",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Custom Font", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh style font yang custom"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CustomFontPage(title: "Eduprog Custom Font",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Freeze Table (Column)", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh desain tabel dengan freeze column"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FreezeColumnPage(title: "Eduprog Freeze Column",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Freeze Table (Row)", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh desain tabel dengan freeze row"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FreezeRowPage(title: "Eduprog Freeze Row",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+
+                ],
               ),
-              Divider(),
-              ListTile(
-                title: Text("Responsive UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh tampilan widget Responsive"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ResponsivePage(title: "Eduprog Responsive UI",)),
-                  );
-                },
+              ExpansionTile(
+                title: Text("Section 2"),
+                children: <Widget>[
+
+                  ListTile(
+                    title: Text("Navigation Drawer", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh implementasi drawer pada halaman"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NavDrawerPage(title: "Eduprog Drawer",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Exit Confirmation", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh konfirmasi button back dengan WillPopScope"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WllPopScopePage(title: "Eduprog WillPopScope",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Chip Selection", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh Chip Selection untuk Single / Multiple Choice"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ChipSelectionPage(title: "Eduprog Chip Selection",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("QrCode Generator", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh generate QRCode"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => QrCodeGeneratorPage(title: "Eduprog QrCode",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("QrCode / BarCode Scanner", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh Scan Barcode dan QRCode"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => QrCodeScannerPage(title: "Eduprog Bar/Qr Code",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Example Widget 8", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh Widget bottomNavigationBar, floatingActionButton, ListView"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyExamplePage8(title: "Eduprog Page 8",)),
+                      );
+                    },
+                  )
+                ],
               ),
-              Divider(),
-              ListTile(
-                title: Text("Login UI", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh tampilan UI Login"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage(title: "Eduprog Login UI",)),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text("Custom Font", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh style font yang custom"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CustomFontPage(title: "Eduprog Custom Font",)),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text("Freeze Table (Column)", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh desain tabel dengan freeze column"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FreezeColumnPage(title: "Eduprog Freeze Column",)),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text("Freeze Table (Row)", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh desain tabel dengan freeze row"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FreezeRowPage(title: "Eduprog Freeze Row",)),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text("Navigation Drawer", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh implementasi drawer pada halaman"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => NavDrawerPage(title: "Eduprog Drawer",)),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text("Exit Confirmation", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh konfirmasi button back dengan WillPopScope"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => WllPopScopePage(title: "Eduprog WillPopScope",)),
-                  );
-                },
-              ),
-              Divider(),
-              ListTile(
-                title: Text("Chip Selection", style: TextStyle(fontWeight: FontWeight.bold)) ,
-                subtitle: Text("Contoh Chip Selection untuk Single / Multiple Choice"),
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ChipSelectionPage(title: "Eduprog Chip Selection",)),
-                  );
-                },
-              )
             ],
           ),
         ),
