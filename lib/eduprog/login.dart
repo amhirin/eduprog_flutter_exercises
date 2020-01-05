@@ -17,14 +17,9 @@ class _LoginPageState extends State<LoginPage> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        //color: Colors.red[100],
-//        width: screenSize.width,
-//        height: screenSize.height,
         scrollDirection: Axis.vertical,
         child: Stack(
-
           children: <Widget>[
-            //make curves for desgining
             ClipPath(
               child: Container(
                 color: Colors.blue[400],
@@ -42,7 +37,6 @@ class _LoginPageState extends State<LoginPage> {
               clipper: WaveClipperTwo(),
             ),
 
-            //curves for bottom
             Positioned(
               child: ClipPath(
                 child: Container(

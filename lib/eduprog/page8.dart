@@ -73,6 +73,7 @@ class _MyExamplePage8State extends State<MyExamplePage8> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.pink[500],
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -90,14 +91,14 @@ class _MyExamplePage8State extends State<MyExamplePage8> {
           });
         },
         showUnselectedLabels: true,
-        iconSize: 30,
+        iconSize: 42,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           print("floatingActionButton pressed");
         },
         elevation: 0,
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, size: 42,),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: _pages[_selectedTab],
