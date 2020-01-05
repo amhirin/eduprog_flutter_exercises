@@ -7,7 +7,6 @@ class QrCodeGeneratorPage extends StatefulWidget {
 
   final String title;
 
-
   QrCodeGeneratorPage({Key key, this.title}) : super(key: key);
 
   @override
@@ -50,10 +49,6 @@ class _QrCodeGeneratorState extends State<QrCodeGeneratorPage> {
                     version: QrVersions.auto,
                     size: 280,
                     gapless: false,
-//                  embeddedImage: AssetImage('assets/eduprog.png'),
-//                  embeddedImageStyle: QrEmbeddedImageStyle(
-//                    size: Size(80, 80),
-//                  )
                   ),
                 ),
                 SizedBox(
