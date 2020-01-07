@@ -4,7 +4,6 @@ class MyExamplePage8 extends StatefulWidget {
 
   final String title;
 
-
   MyExamplePage8({Key key, this.title}) : super(key: key);
 
   @override
