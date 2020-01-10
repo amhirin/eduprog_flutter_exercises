@@ -1,3 +1,4 @@
+import 'package:eduprog_flutter_exercises/eduprog/animation1.dart';
 import 'package:eduprog_flutter_exercises/eduprog/chipselections.dart';
 import 'package:eduprog_flutter_exercises/eduprog/custom_font.dart';
 import 'package:eduprog_flutter_exercises/eduprog/freeze_table.dart';
@@ -203,6 +204,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => MyExamplePage8(title: "Eduprog Page 8",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Animation 1", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh animasi flutter dengan AnimatedContainer"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AnimationPage1(title: "Eduprog Animation",)),
                       );
                     },
                   )
