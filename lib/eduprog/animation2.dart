@@ -15,7 +15,6 @@ class _AnimationPage2State extends State<AnimationPage2> {
   double _btnWidth = 0;
   double _btnHeight = 0;
 
-
   @override
   void dispose() {
     super.dispose();
