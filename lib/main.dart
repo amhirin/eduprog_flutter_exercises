@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:eduprog_flutter_exercises/eduprog/animation1.dart';
 import 'package:eduprog_flutter_exercises/eduprog/animation2.dart';
 import 'package:eduprog_flutter_exercises/eduprog/chipselections.dart';
@@ -25,12 +27,141 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         //primarySwatch: Colors.purple,
       ),
-      home: MyHomePage(title: 'Eduprog Flutter Demo'),
+      home: SplashScreen(),
+      routes: {
+        '/menu': (context) => MyHomePage(title: 'Eduprog Flutter Demo')
+      }
     );
   }
 }
 
+class SplashScreen extends StatefulWidget { // splash screen
+  SplashScreen({Key key}) : super(key: key);
 
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
+  AnimationController controller;
+  Animation<double> animation;
+  int modAnimation = 0;
+  Timer _timer;
+
+
+  @override
+  void initState() {
+    controller = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    controller.forward();
+    super.initState();
+    Future.delayed(Duration(seconds: 3), (){
+      _timer.cancel();
+      controller.dispose();
+      Navigator.of(context).pushReplacementNamed('/menu');
+
+    });
+
+    _timer = Timer.periodic(Duration(milliseconds: 200), (timer) {
+      setState(() {
+        if (modAnimation == 0){
+          modAnimation = 1;
+        }else{
+          modAnimation = 0;
+        }
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
+    Widget getLoading(){
+      List<Widget> lst = [];
+      for(int i = 0; i < 30; i++){
+        int iMod = i % 2;
+        lst.add(AnimatedContainer(
+          duration: Duration(milliseconds: 100),
+          curve: Curves.ease,
+          width: 3,
+          height: iMod == modAnimation ? 50 : 30,
+          decoration: BoxDecoration(
+            color: Colors.orange,
+            borderRadius: BorderRadius.all(Radius.circular(5))
+          ),
+        ));
+        lst.add(SizedBox(
+          width: 3,
+        ));
+      }
+
+      return Container(
+        padding: EdgeInsets.all(10),
+        height: 80,
+        //color: Colors.green,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: lst,
+        ),
+      );
+    }
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            color: Color.fromRGBO(255, 255, 255, 1.0),
+            width: size.width,
+            height: size.height - MediaQuery.of(context).padding.top,
+            child: FadeTransition(
+              opacity: animation,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Image.asset('assets/eduprog.png'),
+                      ),
+                    ),
+                  ),
+                  getLoading(),
+                  Container(
+                    child: Text("Loading..."),
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    color: Colors.red,
+                    child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Text('Aplikasi Versi 1.0.0.0 ', style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1.0), fontWeight: FontWeight.bold),),
+                            SizedBox(
+                              height: 15,
+                            ),
+
+                          ],
+                        )
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
