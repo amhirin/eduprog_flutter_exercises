@@ -2,15 +2,36 @@
 
 Kumpulan Latihan Flutter
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+Preview 1:
 
-A few resources to get you started if this is your first Flutter project:
+![Image of animasi][animasi]
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Preview 2:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Image of ChipChoice][chip]
+
+Preview 3:
+
+![Image of Font][font]
+
+Preview 4:
+
+![Image of Freeze Table][ft]
+
+
+Preview 5:
+
+![Image of Login UI][lu]
+
+Preview 6:
+
+![Image of QRCode][qc]
+
+[animasi]: ./assets/preview/animasi.png
+[chip]: ./assets/preview/chip.png
+[font]: ./assets/preview/font.png
+[ft]: ./assets/preview/freeze-table.png
+[lu]: ./assets/preview/login-ui.png
+[qc]: ./assets/preview/qrcode.png
