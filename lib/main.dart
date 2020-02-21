@@ -8,6 +8,7 @@ import 'package:eduprog_flutter_exercises/eduprog/freeze_table.dart';
 import 'package:eduprog_flutter_exercises/eduprog/login.dart';
 import 'package:eduprog_flutter_exercises/eduprog/nav_drawer.dart';
 import 'package:eduprog_flutter_exercises/eduprog/page8.dart';
+import 'package:eduprog_flutter_exercises/eduprog/popupdialog.dart';
 import 'package:eduprog_flutter_exercises/eduprog/qrcodes.dart';
 import 'package:eduprog_flutter_exercises/eduprog/willpopscope.dart';
 import 'package:flutter/cupertino.dart';
@@ -347,6 +348,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => AnimationPage2(title: "Eduprog Animation",)),
+                      );
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text("Popup Dialog", style: TextStyle(fontWeight: FontWeight.bold)) ,
+                    subtitle: Text("Contoh mengambil data dari popupdialog"),
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PopupDialogPage(title: "Popup Dialog",)),
                       );
                     },
                   ),
